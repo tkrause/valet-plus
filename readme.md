@@ -60,7 +60,7 @@ Here are a few key differences compared to the original Valet:
 
 > :warning: Valet+ requires macOS and [Homebrew](https://brew.sh/). Before installation, you should make sure that no other programs such as Apache or Nginx are binding to your local machine's port 80.
 
-1. Install or update [Homebrew](https://brew.sh/) to the latest version using brew update.
+1. Install or update [Homebrew](https://brew.sh/) to the latest version using `brew update`.
 2. Install PHP 7.1 using Homebrew via `brew install php@7.1`.
 3. Install Composer using Homebrew via `brew install composer`.
 4. Install Valet+ with Composer via `composer global require weprovide/valet-plus`.
@@ -164,6 +164,13 @@ Valet+ automatically installs MySQL 5.7 with 5.6 compatibility mode included. It
 Username: `root`
 
 Password: `root`
+
+## Change password
+
+```
+valet db pwd <old> <new>
+```
+
 
 ## List databases
 
@@ -277,9 +284,33 @@ Will create `welcome.yourproject.test`.
 
 Mailhog is used to catch emails send from PHP. You can access the panel at [http://mailhog.test](http://mailhog.test).
 
+Enable Mailhog:
+
+```
+valet mailhog on
+```
+
+Disable Mailhog:
+
+```
+valet mailhog off
+```
+
 ## Redis
 
 Redis is automatically installed and listens on the default port `6379`. The redis socket is located at `/tmp/redis.sock`
+
+Enable Redis:
+
+```
+valet redis on
+```
+
+Disable Redis:
+
+```
+valet redis off
+```
 
 ## Elasticsearch
 
@@ -327,6 +358,14 @@ Open current git project in [PhpStorm](https://www.jetbrains.com/phpstorm/)
 
 ```
 valet phpstorm
+```
+
+## SourceTree
+
+Open current git project in [SourceTree](https://www.sourcetreeapp.com/)
+
+```
+valet sourcetree
 ```
 
 ## VScode
@@ -389,6 +428,10 @@ valet unsecure example
 The `nginx-error.log`, `php.log` and `mysql.log` are located at `~/.valet/Log`.
 
 Other logs are located at `/usr/local/var/log`
+
+## PHP.ini location
+
+The PHP.ini location is `/usr/local/etc/php/VERSION/php.ini`.
 
 ## Valet drivers
 Valet uses drivers to handle requests. You can read more about those [here](https://laravel.com/docs/5.4/valet#custom-valet-drivers).
@@ -548,3 +591,11 @@ This project is a fork of [laravel/valet](https://github.com/laravel/valet). Tha
 
 - Tim Neutkens ([@timneutkens](https://github.com/timneutkens))
 - Lou van der Laarse ([@Neodork](https://github.com/Neodork))
+- Sam Granger ([@samgranger](https://github.com/samgranger))
+
+
+## Get in touch
+
+[![slack](https://p9.zdassets.com/hc/theme_assets/138842/200037786/logo.png)](https://join.slack.com/t/valet-plus/shared_invite/enQtNDE2MjU2NzgyNjQwLTc4MmI0ZTlhM2FiODRjNmQxN2RlZDVlN2E2YjUwMDBjNGViYjVkNWQ4ODJjYzI3M2U4ZGM5M2Q3ZGQ3ZDQ2YjY)
+
+We have a slack workspace available [which you can join](https://join.slack.com/t/valet-plus/shared_invite/enQtNDE2MjU2NzgyNjQwLTc4MmI0ZTlhM2FiODRjNmQxN2RlZDVlN2E2YjUwMDBjNGViYjVkNWQ4ODJjYzI3M2U4ZGM5M2Q3ZGQ3ZDQ2YjY).
